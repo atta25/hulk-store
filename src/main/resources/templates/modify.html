@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="form" name="form" class="px-4 py-3" action="http://localhost:8080/products/modify" method="post">
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control" id="id" placeholder="Example input" th:value="${id}" name="id" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Example input" th:value="${description}" name="description" required>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" min="1" class="form-control" id="quantity" placeholder="Another input" th:value="${quantity}" name="quantity" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Save changes</button>
+    </form>
+</body>
+</html>

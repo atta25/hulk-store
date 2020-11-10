@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="form" name="form" class="px-4 py-3" action="http://localhost:8080/users" method="post">
+        <h1>Log <span class="badge badge-secondary">Up</span></h1>
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">First name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Password confirmation</label>
+            <input type="password" class="form-control" id="passwordConfirm" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+    </form>
+</div>
+
+<script>
+    $("#form").submit(function(){
+        if($("#password").val()!=$("#passwordConfirm").val())
+        {
+            alert("Passwords do not match");
+            return false;
+        }
+    })
+</script>
+
+</body>
+</html>

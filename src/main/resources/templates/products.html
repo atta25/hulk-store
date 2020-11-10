@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.id}"/>
+            <td th:text="${product.description}" />
+            <td th:text="${product.quantity}" />
+            <td><a class="btn btn-secondary" th:href="'http://localhost:8080/products/modify/' + ${product.id}" role="button">Modify</a></td>
+            <td><a class="btn btn-secondary" th:href="'http://localhost:8080/products/' + ${product.id}" role="button">Remove</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <form id="form" name="form" class="px-4 py-3" action="http://localhost:8080/products" method="post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Description</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="description" required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Quantity</label>
+            <input type="number" min="1" class="form-control" id="formGroupExampleInput2" name="quantity" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Add product</button>
+    </form>
+</body>
+</html>
